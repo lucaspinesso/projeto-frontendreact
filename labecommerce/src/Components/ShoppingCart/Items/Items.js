@@ -1,5 +1,10 @@
+import React from "react"
+import { ItemsStyle } from "./ItemsStyle"
+
 export function Items () {
     return(
-        <p>Items</p>
+        <ItemsStyle>
+            <p>x1 Nome do produto <button>Remover</button></p>
+        </ItemsStyle>
     )
 }
