@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FiltersStyle = styled.header`
+export const FiltersStyle = styled.header`
     background: var(--green);
     min-height: 97.8vh;;
     width: 20vw;
@@ -9,4 +9,7 @@ const FiltersStyle = styled.header`
     padding: 10px;
 `
 
-export default FiltersStyle;
+export const FilterContainer = styled.section`
+    display: flex;
+    flex-direction: column;
+`

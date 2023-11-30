@@ -1,37 +1,39 @@
 import React from "react";
-import { CardConteiner, HomeStyle } from "./HomeStyle";
+import { CardConteiner, QuantidadeProdutosConteiner, HomeStyle, OrdenaçãoContainer } from "./HomeStyle";
 import { ProductCard } from "../ProductCard/ProductCard";
 
-export function Home () {
+export function Home (props) {
+    const { productsList } = props
+
+    const renderList = productsList.map(product =>{
+        return (
+            <ProductCard
+                    key={product.id}
+                    id={product.id}
+                    name={product.name}
+                    value={product.value}
+                    imageUrl={product.imageUrl}
+            />
+        )
+    })
+
     return(
-        <div className="ProductList">
-            <HomeStyle>
-                <header>
-                    Quantidade de produtos:
-                    <section>
-                        <p>Ordenação:</p>
+        <HomeStyle>
+            <QuantidadeProdutosConteiner>
+                <p>Quantidade de produtos: { productsList.length }</p>
+                <OrdenaçãoContainer>
+                    Ordenação:
 
-                        <select name="Ordenação:">
-                            <option value="crescente">Crescente</option>
-                            <option value="decrescente">Decrescente</option>
-                        </select>
-                    </section>
-                </header>
+                    <select name="Ordenação:">
+                        <option value="crescente">Crescente</option>
+                        <option value="decrescente">Decrescente</option>
+                    </select>
+                </OrdenaçãoContainer>
+            </QuantidadeProdutosConteiner>
 
-                <CardConteiner>
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                </CardConteiner>
-            </HomeStyle>
-        </div>
+            <CardConteiner>
+                {renderList}
+            </CardConteiner>
+        </HomeStyle>
     )
 }

@@ -1,18 +1,20 @@
 import React from "react"
-import { ProductCardStyle } from "./ProductCardStyle"
+import { ImgeContainer, ProductCardStyle, InformacoesContainer } from "./ProductCardStyle"
 
-export function ProductCard () {
+export function ProductCard (props) {
+    const { id, name, value, imageUrl } = props
+    
     return(
         <ProductCardStyle>
-            <header>
-                <p>ProductCard</p>
-            </header>
+            <ImgeContainer>
+                <img src={imageUrl} alt={name}/>
+            </ImgeContainer>
             
-            <section>
-                <p>Nome do Produto</p>
-                <p>Valor</p>
+            <InformacoesContainer>
+                <p>{name}</p>
+                <p>Valor {value}</p>
                 <button>Adicionar ao Carrinho</button>
-            </section>
+            </InformacoesContainer>
         </ProductCardStyle>
     )
 }

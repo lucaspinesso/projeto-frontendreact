@@ -6,17 +6,17 @@ export const HomeStyle = styled.div`
     text-align: begin;
     font-size: 2vh;
     padding: 10px;
+`
 
-    header{
-        display: flex;
-        justify-content: space-between;
-        
-        section{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-    }
+export const QuantidadeProdutosConteiner = styled.header`
+    display: flex;
+    justify-content: space-between;
+`
+
+export const OrdenaçãoContainer = styled.section`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 `
 
 export const CardConteiner = styled.section`
