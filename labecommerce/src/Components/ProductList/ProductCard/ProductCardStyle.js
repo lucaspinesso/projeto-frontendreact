@@ -12,11 +12,12 @@ export const ProductCardStyle = styled.div`
 `
 
 export const ImgeContainer = styled.header`
+    display: inline-block;
     img {
         border: 2px solid black;
         margin: 0.5vw;
-        max-width: 100%;
-        max-hight: 100%;
+        width: 20vw;
+        hight: 20vw;
     }
 `
 

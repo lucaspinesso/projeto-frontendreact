@@ -9,7 +9,7 @@ export const FiltersStyle = styled.header`
     padding: 10px;
 `
 
-export const FilterContainer = styled.section`
+export const FilterContainer = styled.form`
     display: flex;
     flex-direction: column;
 `

@@ -1,32 +1,24 @@
 import React from "react";
 import { CardConteiner, QuantidadeProdutosConteiner, HomeStyle, OrdenaçãoContainer } from "./HomeStyle";
-import { ProductCard } from "../ProductCard/ProductCard";
 
 export function Home (props) {
-    const { productsList } = props
-
-    const renderList = productsList.map(product =>{
-        return (
-            <ProductCard
-                    key={product.id}
-                    id={product.id}
-                    name={product.name}
-                    value={product.value}
-                    imageUrl={product.imageUrl}
-            />
-        )
-    })
+    const { renderList } = props.renderList
+    const { ordination } = props.states
+    const { handleOrdination } = props.handlers
 
     return(
         <HomeStyle>
             <QuantidadeProdutosConteiner>
-                <p>Quantidade de produtos: { productsList.length }</p>
+                <p>Quantidade de produtos: { renderList.length }</p>
                 <OrdenaçãoContainer>
                     Ordenação:
 
-                    <select name="Ordenação:">
-                        <option value="crescente">Crescente</option>
-                        <option value="decrescente">Decrescente</option>
+                    <select value={ordination} onChange={handleOrdination}>
+                        <option value="default">Selecione uma opção</option>
+                        <option value="a-z">Nome: de A até Z</option>
+                        <option value="z-a">Nome: de Z até A</option>
+                        <option value="crescente">Preço: Crescente</option>
+                        <option value="decrescente">Preço: Decrescente</option>
                     </select>
                 </OrdenaçãoContainer>
             </QuantidadeProdutosConteiner>
