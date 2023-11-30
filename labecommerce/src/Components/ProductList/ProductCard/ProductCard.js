@@ -2,8 +2,8 @@ import React from "react"
 import { ImgeContainer, ProductCardStyle, InformacoesContainer } from "./ProductCardStyle"
 
 export function ProductCard (props) {
-    const { id, name, value, imageUrl } = props
-    
+    const { name, value, imageUrl } = props
+
     return(
         <ProductCardStyle>
             <ImgeContainer>

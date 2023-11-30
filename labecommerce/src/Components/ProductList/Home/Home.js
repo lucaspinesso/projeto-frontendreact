@@ -1,36 +1,15 @@
 import React from "react";
 import { CardConteiner, QuantidadeProdutosConteiner, HomeStyle, OrdenaçãoContainer } from "./HomeStyle";
-import { ProductCard } from "../ProductCard/ProductCard";
-import { useState } from "react"
 
 export function Home (props) {
-    const { productsList } = props
-
-    const [ordination, setOrdination] = useState("")
-
-    const handleOrdination  = (event) => setOrdination(event.target.value)
-
-    const renderList = productsList
-    .sort((a, b) => ordination === "" || ordination === "z-a" && a.name > b.name ? 1 : -1)
-    .sort((a, b) => ordination === "" || ordination === "a-z" && a.name > b.name ? -1 : 1)
-    .sort((a, b) => ordination === "" || ordination === "crescente" && a.value > b.value ? 1 : -1)
-    .sort((a, b) => ordination === "" || ordination === "decrescente" && a.value > b.value ? -1 : 1)
-    .map(product => {
-        return (
-            <ProductCard
-                    key={product.id}
-                    id={product.id}
-                    name={product.name}
-                    value={product.value}
-                    imageUrl={product.imageUrl}
-            />
-        )
-    })
+    const { renderList } = props.renderList
+    const { ordination } = props.states
+    const { handleOrdination } = props.handlers
 
     return(
         <HomeStyle>
             <QuantidadeProdutosConteiner>
-                <p>Quantidade de produtos: { productsList.length }</p>
+                <p>Quantidade de produtos: { renderList.length }</p>
                 <OrdenaçãoContainer>
                     Ordenação:
 
