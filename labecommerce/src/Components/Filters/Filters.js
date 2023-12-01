@@ -6,10 +6,13 @@ function Filters (props) {
     const {handleMinFilter, handleMaxFilter, handleSearchFilter} = props.handlers
 
     return(
+        
         <FiltersStyle>
+
             <h1>Filters</h1>
 
             <FilterContainer>
+
                 <label htmlFor="name">Valor mínimo:</label>
                 <input 
                 id= "name"
@@ -35,6 +38,7 @@ function Filters (props) {
                 value={searchFilter} 
                 onChange={handleSearchFilter}
                 />
+
             </FilterContainer>
         </FiltersStyle>
     )
