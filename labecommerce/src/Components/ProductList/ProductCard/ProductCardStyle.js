@@ -8,16 +8,30 @@ export const ProductCardStyle = styled.div`
     align-items: center;
     background: var(--deep-blue);
     margin: 0.5vw;
-    width: 385px;
-    max-height: 45vh;
+    width: 285px;
+    max-height: 44.5vh;
+
+    @media (min-device-width : 320px) and (max-device-width : 950px){
+        width: 185px;
+        max-height: 46.3vh;
+    }
 `
 
 export const ImgeContainer = styled.header`
     img {
         border: 2px solid black;
         margin: 2%;
-        width: 365px;
+        width: 270px;
         height: 290px;
+    }
+
+    @media (min-device-width : 320px) and (max-device-width : 950px){
+        img{
+            border: 2px solid black;
+            margin: 2%;
+            width: 165px;
+            height: 200px;
+        }
     }
 `
 

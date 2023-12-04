@@ -8,5 +8,14 @@ export const CartStyle = styled.footer`
     font-size: 2vh;
     padding: 8px;
     color: var(--soft-white);
-    border: 2px solid white;
+    border: 0.5vw solid white;
+
+    @media (min-device-width : 320px) and (max-device-width : 950px){
+        width: 21vw;
+
+        h3{
+            text-align: center;
+            font-size: 18px;
+        }
+    }
 `

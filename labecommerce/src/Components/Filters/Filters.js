@@ -39,6 +39,8 @@ function Filters (props) {
                 onChange={handleSearchFilter}
                 />
 
+                <button onClick={handleSearchFilter}>Limpar Todos os Filtros</button>
+
             </FilterContainer>
         </FiltersStyle>
     )
