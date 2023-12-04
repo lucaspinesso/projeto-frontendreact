@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const HomeStyle = styled.div`
-    background: var(--yellow);
     min-height: 97.8vh;;
     text-align: begin;
     font-size: 2vh;
     padding: 10px;
+    width: 68.5vw;
+    color: var(--soft-white);
 `
 
 export const QuantidadeProdutosConteiner = styled.header`
@@ -21,7 +22,6 @@ export const OrdenaçãoContainer = styled.section`
 
 export const CardConteiner = styled.section`
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
-    width: 60vw;
 `

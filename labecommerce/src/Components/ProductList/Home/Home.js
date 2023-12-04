@@ -9,7 +9,11 @@ export function Home (props) {
     
     return(
 
+        <div style={{ 
+            backgroundImage: `url("https://media.tenor.com/AJBv6U1rfkQAAAAC/background-image-galaxy.gif")` 
+        }}>
         <HomeStyle>
+            
 
             <QuantidadeProdutosConteiner>
 
@@ -42,5 +46,6 @@ export function Home (props) {
 
             </CardConteiner>
         </HomeStyle>
+        </div>
     )
 }
