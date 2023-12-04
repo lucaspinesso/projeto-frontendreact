@@ -12,9 +12,13 @@ export function Cart (props) {
 
             <h1>Cart</h1>
 
+            <br/>
+
             {renderCart}
 
-            <h4>Valor total: R${amount.toFixed(2)}</h4>
+            <br/>
+
+            <h3>Valor total: R$ {amount.toFixed(2)}</h3>
 
         </CartStyle>
     )

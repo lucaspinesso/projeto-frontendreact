@@ -4,7 +4,7 @@ import { Cart } from './Components/ShoppingCart/Cart/Cart';
 import { GlobalStyle } from './GlobalStyle';
 import { AppContainer } from './AppStyle'
 import { productsList } from './assents/productsList'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ProductCard } from "./Components/ProductList/ProductCard/ProductCard";
 import { Items } from './Components/ShoppingCart/Items/Items';
 
@@ -204,6 +204,35 @@ function App() {
 
     )
   })
+
+  useEffect(() =>{
+    
+    const cartSaved = localStorage.getItem("Cart")
+    
+    const amountSaved = localStorage.getItem("Amount")
+
+    if(cartSaved){
+      setCart(JSON.parse(cartSaved))
+    }
+    
+    if(amountSaved){
+      setAmount(JSON.parse(amountSaved))
+    }
+
+  }, [])
+
+  useEffect(() =>{
+    if(cart.length > 0){
+
+      localStorage.setItem("Cart", JSON.stringify(cart))
+
+      localStorage.setItem("Amount", JSON.stringify(amount))
+
+    }else{
+      localStorage.removeItem("Cart")
+      localStorage.removeItem("Amount")
+    }
+  }, [cart])
 
   return (
 

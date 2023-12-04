@@ -1,23 +1,23 @@
 import styled from "styled-components";
 
 export const ProductCardStyle = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: 1fr 0.5fr;
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    align-items: center;
     background: var(--deep-blue);
-    font-size: 2vh;
-    color: var(--soft-white);
     margin: 0.5vw;
-    max-width: 30vw;
+    width: 385px;
+    max-height: 45vh;
 `
 
 export const ImgeContainer = styled.header`
-    display: inline-block;
     img {
         border: 2px solid black;
-        margin: 0.5vw;
-        width: 20vw;
-        hight: 20vw;
+        margin: 2%;
+        width: 365px;
+        height: 290px;
     }
 `
 
@@ -28,4 +28,5 @@ export const InformacoesContainer = styled.section`
     border: 2px solid black;
     margin: 0.5vw;
     padding: 0.5vw;
+    font-size: 18px;
 `
